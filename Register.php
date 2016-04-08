@@ -21,7 +21,7 @@
             <br />
             
             <label>Last Name:</label>
-            <input type='text' name='lastName' id='lastName' required="required" maxlength="50" pattern="[a-zA-Z-]" />
+            <input type='text' name='lastName' id='lastName' required="required" maxlength="50" pattern="[a-zA-Z-]+" />
             <br />
         
             <label >Address 1:</label>

@@ -13,15 +13,15 @@ $state = $_POST["State"];
 $zip = $_POST["Zip"];
 
 $regex = '/^[A-Za-z0-9-]+$/';
+if (!isset($fname,$lname, $address1,$country,$city,$state,$zip))
+{
+    echo "Validation unsuccessful. Empty field found. Returning to registration page";
+    sleep(2);
+    header("Location: registration.php");
+}
 if(preg_match($regex, $fname) || preg_match($regex, $lname) || preg_match($regex, $address1) ||
    preg_match($regex, $country) || preg_match($regex, $city)  || preg_match($regex, $state) || preg_match($regex, $zip) ) {
     echo "Validation successful, sending to database";
-    sleep(2);
-}
-else if (empty($fname) || empty($lname) || empty($address1) || empty($country) ||
-        empty($city) || empty($state) || empty($zip))   
-{
-    echo "Validation unsuccessful. Empty field found. Returning to registration page";
     sleep(2);
 }
 else {
@@ -35,7 +35,6 @@ try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     $sql = "INSERT INTO USERS (FIRSTNAME, LASTNAME, ADDRESS1,ADDRESS2,COUNTRY,CITY,STATE, ZIP, DATE_REGISTERED)
     VALUES ('$fname', '$lname', '$address1', '$address2', '$country', '$city', '$state', '$zip', SYSDATE())";
-    // use exec() because no results are returned
     $conn->exec($sql);
     echo "Insert Successful";
     }
