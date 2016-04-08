@@ -16,15 +16,15 @@
             <legend>Register</legend>
             <input type='hidden' name='submitted' id='submitted' value='1'/>
             
-            <label>First Name: </label>
+            <label>First Name*: </label>
             <input type='text' name='firstName' id='firstName' required="required" maxlength="50" pattern="[a-zA-Z-]+"/>
             <br />
             
-            <label>Last Name:</label>
+            <label>Last Name*:</label>
             <input type='text' name='lastName' id='lastName' required="required" maxlength="50" pattern="[a-zA-Z-]+" />
             <br />
         
-            <label >Address 1:</label>
+            <label >Address 1*:</label>
             <input type='text' name='Address1' id='Address1' maxlength="50" required="required" pattern="[a-zA-Z0-9_]+([a-zA-Z0-9 ]+)"/>
             <br />
         
@@ -32,15 +32,15 @@
             <input type='text' name='Address2' id='Address2'  maxlength="50" pattern="[a-zA-Z0-9 ]+" />
             <br />
         
-            <label>Country:</label>
+            <label>Country*:</label>
             <input type="text" name='Country' id='Country' value="US" readonly>
             <br />
         
-            <label>City:</label>
+            <label>City*:</label>
             <input type='text' name='City' id='City' maxlength="50" pattern="[a-zA-Z0-9 ]+" required="required"/>
             <br />
             
-            <label>State:</label>
+            <label>State*:</label>
             <select name='State' id='State' required="required">
                 	<option value="AL">Alabama</option>
                 	<option value="AK">Alaska</option>
@@ -97,7 +97,7 @@
                 				
         	<br />
                 
-            <label>Zip:</label>
+            <label>Zip*:</label>
             <input type='text' name='Zip' id='Zip' maxlength="10" pattern="(\d{5}([\-]\d{4})?)" required="required"/>
             <br />
             
@@ -105,5 +105,7 @@
              
         </fieldset>
         </form>
+        <p>All fields with an * must be filled out</p> <br />
+        <a href="ListAddresses.php">Admin Report</a>
     </body>
 </html>
