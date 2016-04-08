@@ -12,6 +12,23 @@ $city = $_POST["City"];
 $state = $_POST["State"];
 $zip = $_POST["Zip"];
 
+$regex = '/^[A-Za-z0-9-]+$/';
+if(preg_match($regex, $fname) || preg_match($regex, $lname) || preg_match($regex, $address1) ||
+   preg_match($regex, $country) || preg_match($regex, $city)  || preg_match($regex, $state) || preg_match($regex, $zip) ) {
+    echo "Validation successful, sending to database";
+    sleep(2);
+}
+else if (empty($fname) || empty($lname) || empty($address1) || empty($country) ||
+        empty($city) || empty($state) || empty($zip))   
+{
+    echo "Validation unsuccessful. Empty field found. Returning to registration page";
+    sleep(2);
+}
+else {
+    echo "Validation unsuccessful, returning to registrations page";
+    sleep(3);
+    header("Location: registration.php");
+}  
 
 try {
     

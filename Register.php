@@ -11,7 +11,7 @@
     </head>
     <body>
         <form id='register' action='ProcessRegistration.php' method='post'
-            accept-charset='UTF-8'>
+            accept-charset='UTF-8' onsubmit="return confirm('Are you sure your registration info is correct?');">
         <fieldset >
             <legend>Register</legend>
             <input type='hidden' name='submitted' id='submitted' value='1'/>
@@ -98,7 +98,7 @@
         	<br />
                 
             <label>Zip:</label>
-            <input type='text' name='Zip' id='Zip' maxlength="10" pattern="[\d{5}-?(\d{4})?]" required="required"/>
+            <input type='text' name='Zip' id='Zip' maxlength="10" pattern="(\d{5}([\-]\d{4})?)" required="required"/>
             <br />
             
             <input type='submit' name='Submit' value='Submit' />
